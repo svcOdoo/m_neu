@@ -1,0 +1,9 @@
+table.package_selector .package_active{
+border: 2px solid green;
+color: #017e84;
+}
+table.package_selector .package_done{
+background-color: #f0f0f0;
+color: black;
+pointer-events: none;
+}

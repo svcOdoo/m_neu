@@ -1,0 +1,5 @@
+<odoo>
+    <data>
+        <function model="post.object.run.one.time" name="create_ir_config_parameter"/>
+    </data>
+</odoo>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- pickings views -->
+    <record id="view_stock_move_line_operations_form_inherit" model="ir.ui.view">
+        <field name="name">stock.move.line.operations.form.inherit</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='qty_done']" position="before">
+                <field name="axx_reference"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_stock_move_line_tree_inherit" model="ir.ui.view">
+        <field name="name">view.stock.move.line.tree.inherit</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_stock_move_line_detailed_operation_tree"/>
+        <field name="priority">10000</field>
+        <field name="arch" type="xml">
+            <field name="location_dest_id" position="attributes">
+                <attribute name="invisible">0</attribute>
+                <attribute name="attrs">{'column_invisible': [('parent.picking_type_code', '!=', 'incoming')]}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <!-- list views move lines -->
+    <record id="view_move_line_tree" model="ir.ui.view">
+        <field name="name">view_move_line_tree</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="reference" position="before">
+                <field name="picking_partner_id" optional="show"/>
+            </field>
+            <field name="result_package_id" position="attributes">
+                <attribute name="optional">show</attribute>
+            </field>
+            <xpath expr="//field[@name='qty_done']" position="before">
+                <field name="reserved_uom_qty" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_move_line_view_search" model="ir.ui.view">
+        <field name="name">stock_move_line_view_search</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.stock_move_line_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='location_id']" position="before">
+                <field name="picking_partner_id"/>
+            </xpath>
+            <xpath expr="//field[@name='location_id']" position="after">
+                <field name="location_dest_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_stock_move_line_wizard" model="ir.actions.act_window">
+        <field name="name">Umbuchen PID WE</field>
+        <field name="res_model">stock.move.line.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="stock.model_stock_move_line"/>
+        <field name="binding_type">action</field>
+    </record>
+
+    <record id="action_stock_move_line_pid_pack_wizard" model="ir.actions.act_window">
+        <field name="name">Zielort - Menge - Bestätigen</field>
+        <field name="res_model">stock.move.line.pid.pack.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="stock.model_stock_move_line"/>
+        <field name="binding_type">action</field>
+    </record>
+
+    <record id="view_stock_move_line_form" model="ir.ui.view">
+        <field name="name">stock.move.line.form.inherit</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="picking_code" invisible="1"/>
+                <button name="%(action_stock_move_line_wizard)d"
+                        string="Umbuchen"
+                        type="action"
+                        class="oe_highlight"
+                        attrs="{'invisible': [('picking_code', '!=', 'incoming')]}"
+                />
+                <button name="%(action_stock_move_line_wizard)d"
+                        string="Zielort - Menge - Bestätigen" type="action" class="oe_highlight"
+                        attrs="{'invisible': [('picking_code', '!=', 'internal')]}"
+                />
+            </xpath>
+            <field name="lot_id" position="after">
+                <field name="axx_reference"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_markant_move_line_form" model="ir.ui.view">
+        <field name="name">markant.stock.move.line.form</field>
+        <field name="model">stock.move.line</field>
+        <field name="arch" type="xml">
+            <form string="Move Lines" create="0" edit="1">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <field name="company_id" invisible="1"/>
+                    <field name="picking_code" invisible="1"/>
+                    <field name="picking_id" invisible="1"/>
+                    <field name="location_id" invisible="1"/>
+                    <field name="location_dest_id" invisible="1"/>
+                    <field name="package_id" invisible="1"/>
+                    <field name="product_uom_category_id" invisible="1"/>
+                    <field name="axx_is_already_rebooked" invisible="1"/>
+                    <group>
+                        <field name="axx_reference" readonly="1"/>
+                        <field name="date" readonly="1"/>
+                        <field name="reference" string="Reference" readonly="1"/>
+                        <field name="origin" readonly="1"/>
+                        <field name="product_id" readonly="1"/>
+                        <field name="axx_standard_location_id" readonly="1"/>
+                        <field name="axx_target_location_barcode" attrs="{'readonly': [('axx_is_already_rebooked', '=', True)]}"/>
+                        <field name="target_location_id" attrs="{'readonly': [('axx_is_already_rebooked', '=', True)]}" required="True"/>
+                    </group>
+                    <button name="action_create_move" type="object" string="Create &amp; Confirm Move" class="oe_highlight" attrs="{'invisible': [('picking_code', '!=', 'incoming')]}"/>
+                    <button name="action_create_move" type="object" string="Change Location &amp; Validate" class="oe_highlight" attrs="{'invisible': [('picking_code', '!=', 'internal')]}"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- barcode app -->
+    <record id="stock_move_line_product_selector" model="ir.ui.view">
+        <field name="name">stock_move_line_product_selector</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock_barcode.stock_move_line_product_selector"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[hasclass('o_discard')]" position="after">
+                <field name="axx_show_put_in_pack" invisible="1"/>
+                <button string="Put in Pack" name="axx_put_in_pack" type="object" class="btn btn-primary" attrs="{'invisible': [('axx_show_put_in_pack', '=', False)]}"/>
+            </xpath>
+            <xpath expr="//button[hasclass('o_save')]" position="attributes">
+                <attribute name="attrs">{'invisible': [('axx_show_put_in_pack', '=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='picking_location_dest_id']" position="before">
+                <div class="row">
+                    <div class="col-12 col-md-6 my-2 d-flex align-items-baseline">
+                        <i class="fa fa-fw fa-lg fa-arrows-h me-3" title="Zubuchen" attrs="{'invisible': [('picking_code', '=', 'incoming')]}"/>
+                        <button class="btn-primary" name="axx_zubuchen" type="object"
+                                string="Zubuchen" attrs="{'invisible': [('picking_code', '=', 'incoming')]}"
+                        />
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- obsolete for now due to customer request -->
+<!--    <record id="view_stock_move_line_uses_dummy_lots_confirmation" model="ir.ui.view">-->
+<!--        <field name="name">view.stock.move.line.uses.dummy.lots.confirmation</field>-->
+<!--        <field name="model">stock.move.line</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Use Dummy Lot?">-->
+<!--                <p>-->
+<!--                    You did not assign Lot Number to the move. Would you like to use a dummy lot number?-->
+<!--                </p>-->
+<!--                <footer>-->
+<!--                    <button-->
+<!--                        name="action_use_dummy_lot_and_reload"-->
+<!--                        string="Yes"-->
+<!--                        type="object"-->
+<!--                        default_focus="1"-->
+<!--                        class="btn-primary"/>-->
+<!--                    <button-->
+<!--                        string="No"-->
+<!--                        class="btn-default"-->
+<!--                        special="cancel"-->
+<!--                        />-->
+<!--                </footer>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

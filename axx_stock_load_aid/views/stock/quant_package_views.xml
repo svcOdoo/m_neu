@@ -1,0 +1,16 @@
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_axx_quant_package_form" model="ir.ui.view">
+        <field name="name">view.axx.quant.package.form</field>
+        <field name="model">stock.quant.package</field>
+        <field name="inherit_id" ref="stock.view_quant_package_form"/>
+        <field name="arch" type="xml">
+            <field name="pack_date" position="after">
+                <field name="axx_product_id" domain="[('axx_is_loading_aid', '=', True)]" create="0" edit="0"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>-->

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_axx_split_record_wizard_form" model="ir.ui.view">
+            <field name="name">axx.split.record.wizard.form</field>
+            <field name="model">axx.split.record.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Split Record">
+                    <div clas="row" invisible="context.get('client_action',True)">
+                        <p>This Record contains <strong><field name="axx_lines_count" nolabel="1" readonly="1"/></strong> Move lines.
+                        <span>Do you want to SPLIT or CONTINUE with current action?</span>
+                        </p>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="axx_split_count" options="{'type':'number', 'step':1}"/>
+                        </group>
+
+                    </group>
+                    <footer>
+                        <button name="axx_action_split" string="SPLIT" type="object" class="btn-primary"/>
+                        <button name="axx_action_open" string="CONTINUE" type="object" class="btn-primary" invisible="context.get('client_action',True)"/>
+                        <button name="axx_action_disable" string="Don't Ask Again?" type="object" class="btn-secondary" invisible="context.get('client_action',True)"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_axx_split_record_wizard" model="ir.actions.act_window">
+            <field name="name">Split Record</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">axx.split.record.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_axx_split_record_wizard_form"/>
+            <field name="binding_model_id" ref="stock.model_stock_picking"/>
+            <field name="target">new</field>
+        </record>
+
+
+    </data>
+</odoo>

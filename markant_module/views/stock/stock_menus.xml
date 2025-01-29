@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="stock_move_line_action_pid_in" model="ir.actions.act_window">
+            <field name="name">PID Wareneingang</field>
+            <field name="res_model">stock.move.line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,kanban,pivot,form</field>
+            <field name="domain">[('axx_reference', '!=', False), ('picking_type_id.sequence_code', '!=', 'PICK'), ('picking_type_id.sequence_code', '!=', 'OUT'), ('picking_type_id.sequence_code', '!=', 'PACK')]</field>
+            <!--<field name="context">{'search_default_done': 1, 'create': 0}</field>-->
+            <field name="context">{'create': 0}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    There's no product move yet
+                </p><p>
+                This menu gives you the full traceability of inventory operations on a specific product.
+                You can filter on the product to see all the past movements for the product.
+            </p>
+            </field>
+        </record>
+
+        <record id="stock_move_line_action_pid_in_view_tree" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stock.view_move_line_tree"/>
+            <field name="act_window_id" ref="stock_move_line_action_pid_in"/>
+        </record>
+
+        <record id="stock_move_line_action_pid_in_view_form" model="ir.actions.act_window.view">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="markant_module.view_markant_move_line_form"/>
+            <field name="act_window_id" ref="stock_move_line_action_pid_in"/>
+        </record>
+
+        <record id="stock_move_line_action_pid_out" model="ir.actions.act_window">
+            <field name="name">PID PACK Verladen</field>
+            <field name="res_model">stock.move.line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,kanban,pivot,form</field>
+            <field name="view_id" ref="stock.view_move_line_tree"/>
+            <field name="domain">[('picking_type_id.sequence_code', '!=', 'PICK')]</field>
+            <field name="context">{'search_default_internal': 1, 'search_default_todo': 1, 'create': 0}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    There's no product move yet
+                </p><p>
+                This menu gives you the full traceability of inventory operations on a specific product.
+                You can filter on the product to see all the past movements for the product.
+            </p>
+            </field>
+        </record>
+
+        <record id="stock_move_line_action_pid_out_customer" model="ir.actions.act_window">
+            <field name="name">PID OUT Kunde</field>
+            <field name="res_model">stock.move.line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,kanban,pivot,form</field>
+            <field name="view_id" ref="stock.view_move_line_tree"/>
+            <field name="context">{'search_default_outgoing': 1, 'search_default_todo': 1, 'create': 0}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    There's no product move yet
+                </p><p>
+                This menu gives you the full traceability of inventory operations on a specific product.
+                You can filter on the product to see all the past movements for the product.
+            </p>
+            </field>
+        </record>
+
+        <menuitem
+                action="stock_move_line_action_pid_in"
+                id="stock_move_line_menu_pid_id"
+                parent="stock.menu_stock_warehouse_mgmt" sequence="1"/>
+
+        <menuitem name="Einlagern" id="menu_pid_in_main" sequence="125"/>
+
+        <menuitem action="stock_move_line_action_pid_in"
+                  id="stock_move_line_menu_pid_id_shortcut"
+                  parent="menu_pid_in_main"
+                  sequence="1"/>
+
+        <menuitem
+                action="stock_move_line_action_pid_out"
+                id="stock_move_line_menu_pid_out"
+                parent="stock.menu_stock_warehouse_mgmt" sequence="1"/>
+
+        <menuitem
+                action="stock_move_line_action_pid_out_customer"
+                id="stock_move_line_menu_pid_out_customer"
+                parent="stock.menu_stock_warehouse_mgmt" sequence="1"/>
+
+
+    </data>
+</odoo>

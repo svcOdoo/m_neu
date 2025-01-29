@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_markant_post_object,access_markant_post_object,model_markant_post_object,base.group_no_one,1,1,1,1
+markant_module.access_stock_move_line_wizard,access_stock_move_line_wizard,markant_module.model_stock_move_line_wizard,base.group_user,1,1,1,1
+markant_module.access_stock_move_line_pid_pack_wizard,access_stock_move_line_pid_pack_wizard,markant_module.model_stock_move_line_pid_pack_wizard,base.group_user,1,1,1,1

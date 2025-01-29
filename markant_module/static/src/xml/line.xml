@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+<!-- Line's sub-elements -->
+    <t t-inherit="stock_barcode.LineDestinationLocation" t-inherit-mode="extension" owl="1">
+        <!-- always show the destination location -->
+        <xpath expr="//div[@name='destination_location']" position="attributes">
+            <attribute name="t-if">line and line.location_dest_id</attribute>
+        </xpath>
+        <xpath expr="//div[@name='destination_location']" position="before">
+            <div t-if="line and line.location_dest_id and axxStandardLocationName">
+                <i class="fa fa-fw fa-user-o"/>
+                <span><strong>Komm-Platz: </strong></span>
+                <span t-esc="axxStandardLocationName"/>
+            </div>
+        </xpath>
+        <xpath expr="//div[@name='destination_location']" position="after">
+            <div t-if="axxReference">
+                <i class="fa fa-fw fa-user-o"/>
+                <span>PID: </span>
+                <span t-esc="axxReference"/>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-inherit="stock_barcode.LineComponent" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[contains(@class, 'o_line_button o_edit btn')]" position="attributes">
+            <attribute name="t-if">line and !line.ofr_palette_picking</attribute>
+        </xpath>
+    </t>
+
+</templates>

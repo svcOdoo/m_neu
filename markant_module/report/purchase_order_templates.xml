@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_purchaseorder_document_inherit" inherit_id="purchase.report_purchaseorder_document">
+    <xpath expr="//div[@t-field='o.partner_id']" position="after">
+        <div>GLN: <span t-field="o.partner_id.axx_gln"/></div>
+    </xpath>
+
+    <xpath expr="//div/p[@t-field='o.date_approve']" position="attributes">
+        <attribute name="t-options">{"widget": "date"}</attribute>
+    </xpath>
+
+    <xpath expr="//div[@id='informations']" position="inside">
+        <div t-if="o.date_planned" class="col-3 bm-2">
+            <strong>Lieferdatum:</strong>
+            <p t-field="o.date_planned" class="m-0" t-options='{"widget": "date"}'/>
+        </div>
+    </xpath>
+
+    <xpath expr="//thead/tr" position="replace">
+        <tr>
+            <th name="th_sm_new_column0"><strong>Art. Bezeichnung</strong></th>
+            <th name="th_sm_new_column1"><strong>Lief.-Art.-Nr.</strong></th>
+            <th name="th_sm_new_column2"><strong>Bestell EAN</strong></th>
+            <th name="th_sm_new_column3"><strong>ZAN</strong></th>
+            <th name="th_sm_new_column4" class="text-center"><strong>WWS-Nummer</strong></th>
+            <th name="th_sm_new_column5" class="text-center"><strong>VPE-Menge</strong></th>
+            <th name="th_sm_new_column6" class="text-center"><strong>Pein</strong></th>
+            <th name="th_sm_new_column7" class="text-end"><strong>Menge</strong></th>
+        </tr>
+    </xpath>
+    <xpath expr="//tbody/t/tr[1]/t[1]" position="replace">
+        <t t-if="not line.display_type">
+            <td name="td_name">
+                <span t-field="line.product_id.name"/>
+            </td>
+            <td>
+                <span t-field="line.product_id.axx_supplier_article_number"/>
+            </td>
+            <td name="td_gtin">
+                <span t-field="line.product_id.axx_gtin_single_piece"/>
+            </td>
+            <td name="td_default_code">
+                <span t-field="line.product_id.default_code"/>
+            </td>
+            <td name="td_number4" class="text-center">
+                <span t-field="line.product_id.axx_trading_partner_article_number"/>
+            </td>
+            <td name="td_vpe" class="text-center">
+                <t t-if="line.product_packaging_id"><span t-field="line.product_packaging_qty"/> <span t-field="line.product_packaging_id.name"/></t>
+            </td>
+            <td name="td_unit" class="text-center">
+                <span t-field="line.product_id.axx_qty_per_vpe"/> <span t-field="line.product_id.axx_purchase_unit"/>
+            </td>
+            <td class="text-end">
+                <span t-field="line.product_qty"/>
+                <span t-field="line.product_uom.name" groups="uom.group_uom"/>
+            </td>
+        </t>
+    </xpath>
+</template>
+
+</odoo>

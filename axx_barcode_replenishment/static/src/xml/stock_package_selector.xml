@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="axx_barcode_replenishment.PackageSelector" owl="1">
+        <Dialog>
+                <View t-if="!packageState.productInfo and !packageState.packageInfo" t-props="viewProps"/>
+                <button  t-on-click="loadFormPackages" t-if="!packageState.productInfo and !packageState.packageInfo" type="button" class="btn btn-primary">Load Packages</button>
+                <div t-if="!packageState.productInfo and !packageState.packageInfo"
+                     class="container text-justify overflow-auto h-100">
+                    <div class="d-flex flex-column my-5 pt-4">
+                        <p>Please scan a Standard Location / Product</p>
+                    </div>
+                    <div class="o_stock_mobile_barcode_container">
+                        <img src="/barcodes/static/img/barcode.png" alt="Barcode" class="img-fluid mb-1 mt-1"/>
+                    </div>
+                    <span class="o_stock_barcode_laser"/>
+
+                </div>
+                <div>
+                    <table class="table" t-if="packageState.productInfo">
+                        <thead>
+                            <th t-esc="packageState.productInfo.name"></th>
+                            <th t-esc="packageState.productInfo.location_name"></th>
+                            <input type="checkbox" t-att-id="packageState.productInfo.location_id"
+                                   t-att-checked="packageState.productInfo.fromVireRef" style="display:none;" class="location_dest_id"/>
+                        </thead>
+                    </table>
+                    <div t-if="packageState.productInfo and !packageState.packageInfo">
+                        <strong style="font-size: 1.2em;">No Packages available in Reserve Locations!</strong>
+                    </div>
+
+                    <table class="table table-bordered table-dark package_selector" t-if="packageState.packageInfo">
+                        <tbody>
+                            <t t-foreach="range(0, packageState.packageInfo.length, 2)" t-as="rowIndex" t-key="rowIndex">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" class="package_grid_selected" t-att-id="packageState.packageInfo[rowIndex].id"
+                                               t-on-click="selectPackage" style="margin-right: 10px;"></input>
+                                        <span t-esc="packageState.packageInfo[rowIndex].location"/><br/>
+                                        <!--<span><strong>QTY: </strong><t t-esc="packageState.packageInfo[rowIndex].quantity"/></span><br/>-->
+                                        <span><strong>PID: </strong><t t-esc="packageState.packageInfo[rowIndex].name"/></span><br/>
+                                        <span><strong>Charge: </strong><t t-esc="packageState.packageInfo[rowIndex].lot"/></span><br/>
+                                        <span><strong>MHD: </strong><t t-esc="packageState.packageInfo[rowIndex].useDate"/></span>
+                                        <!--<button style="float:right;"><span t-on-click="clickOpenBarcode"><i class="fa fa-truck"></i></span></button>-->
+                                    </td>
+                                    <td t-if="packageState.packageInfo[rowIndex + 1]">
+                                        <input type="checkbox" class="package_grid_selected" t-att-id="packageState.packageInfo[rowIndex + 1].id"
+                                               t-on-click="selectPackage" style="margin-right: 10px;"></input>
+                                        <span t-esc="packageState.packageInfo[rowIndex + 1].location"/><br/>
+                                        <!--<span><strong>QTY: </strong><t t-esc="packageState.packageInfo[rowIndex + 1].quantity"/></span><br/>-->
+                                        <span><strong>PID: </strong><t t-esc="packageState.packageInfo[rowIndex + 1].name"/></span><br/>
+                                        <span><strong>Charge: </strong><t t-esc="packageState.packageInfo[rowIndex + 1].lot"/></span><br/>
+                                        <span><strong>MHD: </strong><t t-esc="packageState.packageInfo[rowIndex + 1].useDate"/></span>
+                                        <!--<button style="float:right;"><span t-on-click="clickOpenBarcode"><i class="fa fa-truck"></i></span></button>-->
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary o-transfer-create"
+                        t-on-click="createTransfer">
+                    <t>Replenish</t>
+                </button>
+                <button class="btn btn-primary o-transfer-create"
+                        t-on-click="reloadView">
+                    <t>Reload</t>
+                </button>
+
+                <button class="btn btn-secondary" t-on-click="props.close">
+                        <t>Cancel</t>
+                </button>
+            </t>
+
+
+        </Dialog>
+    </t>
+</templates>

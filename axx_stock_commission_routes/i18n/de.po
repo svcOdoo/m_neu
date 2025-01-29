@@ -1,0 +1,69 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* axx_stock_commission_routes
+# 	* base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-03 16:45+0000\n"
+"PO-Revision-Date: 2023-02-03 16:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base
+#: model:ir.module.module,description:base.module_axx_stock_commission_routes
+msgid ""
+"\n"
+"    The order of operations in picking must follow the locations along the aisles in the warehouse, and must be manually adjustable.\n"
+"    The goal is to not have to run \"back and forth\" during picking.\n"
+"\n"
+"    Note:\n"
+"        - Standard Location and Reserve Location are in the same place, so there is no need to distinguish between goods receipt and warehouse out.\n"
+"        - The sequence of the operations in the picking follows the sequence of the Standard Location of the products. It is grouped according to the parent location.\n"
+"          Example: Aisle A and Aisle B each have 100 locations with sequence 1-100. In Picking, all locations from Aisle A come first, then Aisle B.\n"
+"    "
+msgstr ""
+"\n"
+"    Die Reihenfolge der Operations im Picking muss den Plätzen entlang der Gänge im Lager folgen, und manuell angepasst werden können.\n"
+"    Ziel ist dass bei der Kommissionierung nicht \"hin und her\" gelaufen werden muss.\n"
+"\n"
+"    Hinweis:\n"
+"        - Standard-Lagerplatz und Reserve-Lagerplatz sind an der gleichen Stelle, daher muss nicht zwischen Wareneingang und Warenausgang unterschieden werden.\n"
+"        - Die Reihenfolge der Operations im Picking folgt der Sequenz des Standard-Lagerplatz der Produkte. Dabei wird anhand des übergeordneten Lagerplatz gruppiert.\n"
+"          Bsp: Gang A und Gang B haben jeweils 100 Lagerplätze mit Sequenz 1-100. Im Picking kommen zuerst alle Lagerplätze von Gang A, dann Gang B.\n"
+"    "
+
+#. module: axx_stock_commission_routes
+#: model:ir.model.fields,help:axx_stock_commission_routes.field_stock_location__axx_seq
+#: model:ir.model.fields,help:axx_stock_commission_routes.field_stock_move__axx_loc_seq
+#: model:ir.model.fields,help:axx_stock_commission_routes.field_stock_move_line__axx_loc_seq
+msgid ""
+"The sequence of the operations in the picking follows the sequence of the Standard Location of the products.\n"
+"        It is grouped according to the parent location. \n"
+"        Example: Aisle A and Aisle B each have 100 locations with sequence 1-100. In Picking, all locations from Aisle A come first, then Aisle B."
+msgstr ""
+"Die Reihenfolge der Operations im Picking folgt der Sequenz des Standard-Lagerplatz der Produkte.\n"
+"        Dabei wird anhand des übergeordneten Lagerplatz gruppiert. \n"
+"        Bsp: Gang A und Gang B haben jeweils 100 Lagerplätze mit Sequenz 1-100. Im Picking kommen zuerst alle Lagerplätze von Gang A, dann Gang B."
+
+#. module: axx_stock_commission_routes
+#: model:ir.model.fields,field_description:axx_stock_commission_routes.field_stock_move__axx_loc_seq
+#: model:ir.model.fields,field_description:axx_stock_commission_routes.field_stock_move_line__axx_loc_seq
+msgid "Seq."
+msgstr "Seq."
+
+#. module: axx_stock_commission_routes
+#: model:ir.model.fields,field_description:axx_stock_commission_routes.field_stock_location__axx_seq
+msgid "Sequence"
+msgstr "Sequenz"
+
+#. module: axx_stock_commission_routes
+#: model:ir.model.fields,field_description:axx_stock_commission_routes.field_stock_location__axx_full_seq
+msgid "Full Sequence"
+msgstr "Volle Sequenz"

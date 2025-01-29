@@ -1,0 +1,37 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* axx_partner_outgoing_location
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-01 17:04+0000\n"
+"PO-Revision-Date: 2023-02-01 17:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: axx_partner_outgoing_location
+#: model:ir.model.fields,field_description:axx_partner_outgoing_location.field_res_partner__axx_outgoing_location_id
+#: model:ir.model.fields,field_description:axx_partner_outgoing_location.field_res_users__axx_outgoing_location_id
+msgid "Outgoing Location"
+msgstr "WA-Bahn"
+
+#. module: axx_partner_outgoing_location
+#: model:ir.model.fields,field_description:axx_partner_outgoing_location.field_stock_location__axx_is_outgoing_loc
+msgid "Is Outgoing Location"
+msgstr "Ist WA-Bahn"
+
+#. module: axx_partner_outgoing_location
+#: model:ir.model.fields,help:axx_partner_outgoing_location.field_res_partner__axx_outgoing_location_id
+#: model:ir.model.fields,help:axx_partner_outgoing_location.field_res_users__axx_outgoing_location_id
+msgid ""
+"The location (WA-Bahn) where products to be sent out to the customer are "
+"collected and packed, waiting to be picked up by a truck."
+msgstr ""
+"Die WA-Bahn: Hier werden die Produkte für den Kunden gesammelt und verpackt, "
+"und werden von hier in den LKW geladen."

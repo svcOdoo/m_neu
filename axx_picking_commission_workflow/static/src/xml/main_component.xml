@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="axx_barcode_scan.MainComponent" t-inherit="stock_barcode.MainComponent" t-inherit-mode="extension" owl="1">
+        <xpath expr="//button[hasclass('o_show_information')]" position="after">
+            <button class="btn nav-link" t-on-click="_onClickSetPackPid">
+                P
+            </button>
+<!--                <nav class="navbar-nav me-auto second">-->
+<!--                    <button class="btn btn-default" t-on-click="_onClickSetPackPid">-->
+<!--                        <span class="o_title navbar-text text-white"><a href="#">Current PID</a>: </span><span class="o_title navbar-text text-white" t-esc="env.model.record.axx_pack_pid"/>-->
+<!--                    </button>-->
+<!--                </nav>-->
+        </xpath>
+        <xpath expr="//button[hasclass('o_put_in_pack')]" position="replace">
+            <button t-if="env.model.displayPutInPackButton and env.model.displayNeueTeButton"
+                    t-on-click="putInPack" class="o_put_in_pack btn btn-secondary text-uppercase">
+                <i class="fa fa-cube mr-1"/> New Pack
+            </button>
+            <button t-if="env.model.displayPutInPackButton and !env.model.displayNeueTeButton"
+                    t-on-click="putInPack" class="o_put_in_pack btn btn-secondary text-uppercase">
+                <i class="fa fa-cube mr-1"/> Put in Pack
+            </button>
+        </xpath>
+        <xpath expr="//button[hasclass('o_put_in_pack')]" position="after">
+                <button t-if="env.model.displayAbstellenButton and (env.model.axxRequiresPackaging or !this.env.model.axxQtyEntered)"
+                        t-on-click="putDown" class="o_put_down btn btn-secondary text-uppercase">
+                    Put Down
+                </button>
+
+                <button t-if="env.model.displayAbstellenButton and !env.model.axxRequiresPackaging and this.env.model.axxQtyEntered"
+                        t-on-click="putDown" class="o_show_wa_lane btn btn-success text-uppercase">
+                    Drive to WA-Lane
+                </button>
+        </xpath>
+
+    </t>
+</templates>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_axx_data_export_tree" model="ir.ui.view">
+        <field name="name">axx.data.export.tree</field>
+        <field name="model">axx.data.export</field>
+        <field name="arch" type="xml">
+            <tree string="Axx Data Export"
+                  decoration-danger="state == 'failed'"
+                  decoration-muted="state == 'done'">
+                <field name="create_date"/>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="axx_model"/>
+                <field name="axx_record_id"/>
+                <field name="axx_user_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_axx_data_export_form" model="ir.ui.view">
+        <field name="name">axx.data.export.form</field>
+        <field name="model">axx.data.export</field>
+        <field name="arch" type="xml">
+            <form string="Axx Data Export">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_axx_open_related_record"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-external-link-square"
+                                string="Record"
+                        />
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="axx_record_id"/>
+                            <field name="axx_model"/>
+                        </group>
+                        <group>
+                            <field name="create_date"/>
+                            <field name="axx_user_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Data">
+                            <field name="axx_data"/>
+                        </page>
+                        <page string="Changed Fields" groups="base.group_erp_manager">
+                            <field name="axx_changed_fields"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_axx_data_export_search" model="ir.ui.view">
+        <field name="name">axx.data.export.search</field>
+        <field name="model">axx.data.export</field>
+        <field name="arch" type="xml">
+            <search string="Axx Data Export">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="axx_model"/>
+                <field name="axx_user_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_axx_data_export" model="ir.actions.act_window">
+        <field name="name">Export Data Overview</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">axx.data.export</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no Export Data yet.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="main_axx_data_export_menu"
+              name="Export Data"
+              groups="base.group_erp_manager"
+              sequence="450"
+              web_icon="axx_export_trigger_no_queue,static/description/icon.png"
+    />
+    <menuitem id="axx_data_export_menu"
+              name="Export Data"
+              parent="main_axx_data_export_menu"
+              action="action_axx_data_export"
+              sequence="10"
+    />
+</odoo>

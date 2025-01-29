@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Add Pack Pid Wizard Form View -->
+        <record id="view_axx_pid_stock_picking_form" model="ir.ui.view">
+            <field name="name">axx.stock_picking.pid.form</field>
+            <field name="model">stock.picking</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="axx_pack_pid" required="1"/>
+                        <field name="axx_package_type_id" widget="selection" required="1"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Add Pack Pid Wizard Action -->
+        <record id="action_add_pack_pid_wizard" model="ir.actions.act_window">
+            <field name="name">New Pack PID</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.picking</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_axx_pid_stock_picking_form"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="seq_axx_dummy_lots" model="ir.sequence">
+        <field name="name">Dummy Lots</field>
+        <field name="code">dummy.lots</field>
+        <field name="prefix">DUMMY</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+</odoo>

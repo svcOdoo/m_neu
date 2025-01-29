@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_stock_move_line_wizard_form" model="ir.ui.view">
+            <field name="name">stock.move.line.wizard.form</field>
+            <field name="model">stock.move.line.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Create &amp; Confirm Move">
+                    <group>
+                        <field name="target_location_id" options="{'no_create': True}"/>
+                    </group>
+                    <footer>
+                        <button name="action_create_move" string="Create Move" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

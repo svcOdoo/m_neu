@@ -1,0 +1,116 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* axx_split_list_records
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-02 12:27+0000\n"
+"PO-Revision-Date: 2023-08-02 12:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: axx_split_list_records
+#: model_terms:ir.ui.view,arch_db:axx_split_list_records.view_axx_split_record_wizard_form
+msgid "CONTINUE"
+msgstr "WEITER"
+
+#. module: axx_split_list_records
+#: model:ir.model.fields,field_description:axx_split_list_records.field_axx_split_record_wizard__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: axx_split_list_records
+#: model:ir.model.fields,field_description:axx_split_list_records.field_axx_split_record_wizard__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: axx_split_list_records
+#: model:ir.model.fields,field_description:axx_split_list_records.field_axx_split_record_wizard__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: axx_split_list_records
+#: model_terms:ir.ui.view,arch_db:axx_split_list_records.view_axx_split_record_wizard_form
+msgid "Don't Ask Again?"
+msgstr "Nicht nochmal fragen?"
+
+#. module: axx_split_list_records
+#: model:ir.model.fields,field_description:axx_split_list_records.field_axx_split_record_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: axx_split_list_records
+#: model:ir.model.fields,field_description:axx_split_list_records.field_axx_split_record_wizard____last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: axx_split_list_records
+#: model:ir.model.fields,field_description:axx_split_list_records.field_axx_split_record_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt geändert von"
+
+#. module: axx_split_list_records
+#: model:ir.model.fields,field_description:axx_split_list_records.field_axx_split_record_wizard__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt geändert am"
+
+#. module: axx_split_list_records
+#: model:ir.model.fields,field_description:axx_split_list_records.field_axx_split_record_wizard__axx_lines_count
+msgid "Lines Count"
+msgstr "Anzahl Zeilen"
+
+#. module: axx_split_list_records
+#: model_terms:ir.ui.view,arch_db:axx_split_list_records.view_axx_split_record_wizard_form
+msgid ""
+"Move lines.\n"
+"                        <span>Do you want to SPLIT or CONTINUE with current action?</span>"
+msgstr ""
+"Transfer Zeilen.\n"
+"                        <span>Möchten Sie SPLIT ausführen oder FORTFAHREN?</span>"
+
+#. module: axx_split_list_records
+#: model_terms:ir.ui.view,arch_db:axx_split_list_records.view_axx_split_record_wizard_form
+msgid "SPLIT"
+msgstr "SPLIT"
+
+#. module: axx_split_list_records
+#. odoo-python
+#: code:addons/axx_split_list_records/models/stock_picking.py:0
+#, python-format
+msgid "Split %s"
+msgstr "Split %s"
+
+#. module: axx_split_list_records
+#: model:ir.actions.act_window,name:axx_split_list_records.action_axx_split_record_wizard
+#: model:ir.model,name:axx_split_list_records.model_axx_split_record_wizard
+#: model_terms:ir.ui.view,arch_db:axx_split_list_records.view_axx_split_record_wizard_form
+msgid "Split Record"
+msgstr "Splitte Auftrag"
+
+#. module: axx_split_list_records
+#: model:ir.model.fields,field_description:axx_split_list_records.field_axx_split_record_wizard__axx_split_count
+msgid "Split To"
+msgstr "Split Anzahl"
+
+#. module: axx_split_list_records
+#. odoo-python
+#: code:addons/axx_split_list_records/models/stock_picking.py:0
+#, python-format
+msgid "The backorder (SPLIT) %s has been created."
+msgstr "Der Lieferrückstand (SPLIT) %s wurde erzeugt."
+
+#. module: axx_split_list_records
+#: model_terms:ir.ui.view,arch_db:axx_split_list_records.view_axx_split_record_wizard_form
+msgid "This Record contains"
+msgstr "Dieser Datensatz beinhaltet"
+
+#. module: axx_split_list_records
+#: model:ir.model,name:axx_split_list_records.model_stock_picking
+msgid "Transfer"
+msgstr "Lieferung"

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Put Down Wizard Form View -->
+        <record id="view_axx_put_down_wizard_form" model="ir.ui.view">
+            <field name="name">axx.put.down.wizard.form</field>
+            <field name="model">axx.put.down.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div name="destination_location" title="Destination Location" style="font-size: 3em;text-align: center; overflow: auto;">
+                            <i class="fa fa-fw fa-sign-in"></i><span class="o_line_destination_location fst-italic text-muted">
+                        <span class="text-black"><field name="axx_location_dest_name" readonly="1" nolabel="1"/></span></span>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+.o_cp_searchview i.o_searchview_icon.oi.oi-search {
+    font-size: 200% !important;
+}
+
+.o_cp_searchview input.o_searchview_input {
+    font-size: 125% !important;
+}
+
+.o_searchview span.o_facet_value {
+    font-size: 125% !important;
+}
+
+.o_cp_top button.o_enable_searchview {
+    font-size: 300% !important;
+}

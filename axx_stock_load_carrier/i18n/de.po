@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* axx_stock_load_carrier
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-06 08:05+0000\n"
+"PO-Revision-Date: 2023-02-06 08:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: axx_stock_load_carrier
+#: model:ir.model.fields,field_description:axx_stock_load_carrier.field_product_product__axx_is_loading_aid
+#: model:ir.model.fields,field_description:axx_stock_load_carrier.field_product_template__axx_is_loading_aid
+#: model:ir.model.fields,field_description:axx_stock_load_carrier.field_stock_package_type__axx_product_id
+msgid "Loading Aid"
+msgstr "Ladehilfsmittel"
+
+#. module: axx_stock_load_carrier
+#: model:ir.model,name:axx_stock_load_carrier.model_stock_quant_package
+msgid "Packages"
+msgstr "Verpackungen"
+
+#. module: axx_stock_load_carrier
+#: model:ir.model,name:axx_stock_load_carrier.model_product_template
+msgid "Product"
+msgstr "Produkt"

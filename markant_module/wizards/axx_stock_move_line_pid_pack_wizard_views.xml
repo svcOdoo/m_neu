@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Stock Move Line Wizard Form View -->
+        <record id="view_stock_move_line_pid_pack_wizard_form" model="ir.ui.view">
+            <field name="name">stock.move.line.pid.pack.wizard.form</field>
+            <field name="model">stock.move.line.pid.pack.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Change Location">
+                    <group>
+                        <field name="target_location_id" options="{'no_create': True}"/>
+                        <field name="set_quantity"/>
+                        <field name="validate_picking"/>
+                    </group>
+                    <footer>
+                        <button name="action_confirm" string="Confirm" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Stock Move Line Wizard Action -->
+        <record id="action_stock_move_line_wizard" model="ir.actions.act_window">
+            <field name="name">Change Location</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.move.line.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_stock_move_line_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

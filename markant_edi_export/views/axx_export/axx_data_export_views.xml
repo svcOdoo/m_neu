@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_axx_data_export_form_inherit" model="ir.ui.view">
+        <field name="name">axx.data.export.form.inherit</field>
+        <field name="model">axx.data.export</field>
+        <field name="inherit_id" ref="axx_export_trigger_no_queue.view_axx_data_export_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Result">
+                    <group>
+                        <field name="axx_result"/>
+                        <field name="axx_attachment_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

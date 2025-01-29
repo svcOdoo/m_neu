@@ -1,0 +1,61 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* axx_markant_delivery
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-16 08:39+0000\n"
+"PO-Revision-Date: 2023-02-16 08:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: axx_markant_delivery
+#. odoo-python
+#: code:addons/axx_markant_delivery/models/sale/sale_order.py:0
+#, python-format
+msgid "Customer outgoing location is not set! Please select one!"
+msgstr "Der Ort des Kundenausgangs ist nicht festgelegt! Bitte wählen Sie einen aus!"
+
+#. module: axx_markant_delivery
+#. odoo-python
+#: code:addons/axx_markant_delivery/models/sale/sale_order.py:0
+#, python-format
+msgid "Delivery is already done, cannot update the truck location!"
+msgstr "Die Lieferung ist bereits erfolgt, der Standort des LKWs kann nicht aktualisiert werden!"
+
+#. module: axx_markant_delivery
+#: model:ir.model,name:axx_markant_delivery.model_procurement_group
+msgid "Procurement Group"
+msgstr "Beschaffungsgruppe"
+
+#. module: axx_markant_delivery
+#: model:ir.model,name:axx_markant_delivery.model_sale_order
+msgid "Sales Order"
+msgstr "Verkaufsauftrag "
+
+#. module: axx_markant_delivery
+#. odoo-python
+#: code:addons/axx_markant_delivery/models/sale/sale_order.py:0
+#, python-format
+msgid ""
+"Selected location already configured in deliveries!Please select another "
+"location!"
+msgstr "Ausgewählter Standort bereits in Lieferungen konfiguriert - bitte wählen Sie einen anderen Standort"
+
+#. module: axx_markant_delivery
+#: model:ir.model.fields,field_description:axx_markant_delivery.field_sale_order__axx_plan_truck_location_id
+msgid "Truck Location"
+msgstr "Geplanter LKW"
+
+#. module: axx_markant_delivery
+#. odoo-python
+#: code:addons/axx_markant_delivery/models/sale/sale_order.py:0
+#, python-format
+msgid "Truck location is not set! Please select one!"
+msgstr "Lkw-Standort ist nicht festgelegt! Bitte wählen Sie einen aus!"

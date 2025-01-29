@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">view.res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <page name="internal_notes" position="before">
+                <page name="axx_trading_partner" string="Contact Handelspartner">
+                    <group>
+                        <label for="axx_trading_partner_name" class="axx_w_120"/>
+                        <div>
+                            <field name="axx_trading_partner_name"/>
+                        </div>
+                        <label for="axx_trading_partner_email" class="axx_w_120"/>
+                        <div>
+                            <field name="axx_trading_partner_email"/>
+                        </div>
+                        <label for="axx_trading_partner_phone" class="axx_w_120"/>
+                        <div>
+                            <field name="axx_trading_partner_phone"/>
+                        </div>
+                        <label for="axx_trading_partner_mobile" class="axx_w_120"/>
+                        <div>
+                            <field name="axx_trading_partner_mobile"/>
+                        </div>
+                        <label for="axx_trading_partner_fax" class="axx_w_120"/>
+                        <div>
+                            <field name="axx_trading_partner_fax"/>
+                        </div>
+                    </group>
+                </page>
+            </page>
+            <field name="vat" position="after">
+                <field name="axx_gln"/>
+            </field>
+        </field>
+    </record>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+    <field name="name">view_res_partner_filter</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_res_partner_filter"/>
+    <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="axx_gln"/>
+            </field>
+
+        </field>
+    </record>
+</odoo>

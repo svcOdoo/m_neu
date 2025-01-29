@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_stock_location_form_inherit" model="ir.ui.view">
+        <field name="name">view.stock.location.form.inherit</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form"/>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <field name="barcode" position="before">
+                <field name="axx_picking_location_scan"/>
+                <field name="axx_check_digit" attrs="{'invisible': [('axx_picking_location_scan', '!=', 'check_digit')], 'required': [('axx_picking_location_scan', '=', 'check_digit')]}"/>
+            </field>
+            <field name="barcode" position="attributes">
+                <attribute name="attrs">{'required': [('axx_picking_location_scan', '=', 'barcode')]}</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

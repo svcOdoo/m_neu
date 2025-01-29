@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base
+# 	* axx_stock_product_location
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-02 19:31+0000\n"
+"PO-Revision-Date: 2023-02-02 19:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: axx_stock_product_location
+#: model:ir.model.fields,field_description:axx_stock_product_location.field_product_product__axx_reserve_location_id
+#: model:ir.model.fields,field_description:axx_stock_product_location.field_product_template__axx_reserve_location_id
+msgid "Reserve Location"
+msgstr "Reserve-Lagerplatz"
+
+#. module: axx_stock_product_location
+#: model:ir.model.fields,field_description:axx_stock_product_location.field_product_product__axx_standard_location_id
+#: model:ir.model.fields,field_description:axx_stock_product_location.field_product_template__axx_standard_location_id
+#: model:ir.model.fields,field_description:axx_stock_product_location.field_stock_move__axx_standard_location_id
+#: model:ir.model.fields,field_description:axx_stock_product_location.field_stock_move_line__axx_standard_location_id
+msgid "Standard Location"
+msgstr "Standard-Lagerplatz"
+
+#. module: base
+#: model:ir.module.module,description:base.module_axx_stock_product_location
+msgid ""
+"\n"
+"    Each product is assigned a standard storage location and a reserve storage location. At goods receipt, the product is posted to the reserve storage location.\n"
+"    At warehouse out - or at picking/comminioning - the products are always taken from the same standard storage location.\n"
+"    "
+msgstr ""
+"\n"
+"    Jedem Produkt wird ein Standard-Lagerplatz und ein Reserve-Lagerplatz zugewiesen. Beim Wareneingang wird das Produkt auf den Reserve-Lagerplatz eingebucht.\n"
+"    Beim Warenausgang - bzw. bei der Kommisionierung - werden die Produkte aus immer dem gleichen Standard-Lagerplatz entnommen..\n"
+"    "

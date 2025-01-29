@@ -1,0 +1,181 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* axx_barcode_replenishment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-13 14:15+0000\n"
+"PO-Revision-Date: 2023-09-13 14:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "Barcode"
+msgstr ""
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "Charge:"
+msgstr ""
+
+#. module: axx_barcode_replenishment
+#: model:ir.model.fields,field_description:axx_barcode_replenishment.field_axx_standard_location_select_wizard__axx_standard_location_id
+msgid "Destination Location"
+msgstr "Komm-Platz"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "Load Packages"
+msgstr "PID Laden"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "MHD:"
+msgstr "MHD:"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "No Packages available in Reserve Locations!"
+msgstr "Keine PID verfügbar auf Reserveplätzen!"
+
+#. module: axx_barcode_replenishment
+#. odoo-python
+#: code:addons/axx_barcode_replenishment/models/stock_quant_package.py:0
+#, python-format
+msgid "No destination location is selected!"
+msgstr "Kein Ziellagerort gewählt!"
+
+#. module: axx_barcode_replenishment
+#. odoo-python
+#: code:addons/axx_barcode_replenishment/models/stock_quant_package.py:0
+#, python-format
+msgid "No src location is selected!"
+msgstr "Kein Quelllagerort gewählt!"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "PID:"
+msgstr ""
+
+#. module: axx_barcode_replenishment
+#: model:ir.model,name:axx_barcode_replenishment.model_stock_quant_package
+msgid "Packages"
+msgstr "Verpackungen"
+
+#. module: axx_barcode_replenishment
+#: model:ir.model,name:axx_barcode_replenishment.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Vorgangstyp"
+
+#. module: axx_barcode_replenishment
+#: model:ir.model.fields,field_description:axx_barcode_replenishment.field_stock_picking_type__axx_default_package_move
+msgid "Picking used for moving packages"
+msgstr ""
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "Please scan a Standard Location / Product"
+msgstr "Bitte Komm-Platz oder Produkt scannen"
+
+#. module: axx_barcode_replenishment
+#. odoo-python
+#: code:addons/axx_barcode_replenishment/models/stock_quant_package.py:0
+#, python-format
+msgid "Please set a default picking type to move packages!"
+msgstr ""
+
+#. module: axx_barcode_replenishment
+#: model:ir.model.fields,field_description:axx_barcode_replenishment.field_axx_standard_location_select_wizard__axx_product_id
+msgid "Product"
+msgstr "Produkt"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "Reload"
+msgstr "Neu Laden"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/stock_package_selector.xml:0
+#, python-format
+msgid "Replenish"
+msgstr "Bestätigen"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/xml/main_menu.xml:0
+#, python-format
+msgid "Nachschub"
+msgstr "Nachschub"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/js/stock_package_render.js:0
+#, python-format
+msgid "Scan a Product / Location"
+msgstr "Scanne Produkt / Lagerort"
+
+#. module: axx_barcode_replenishment
+#: model:ir.actions.act_window,name:axx_barcode_replenishment.axx_standard_location_select_wizard_action
+msgid "Select Location"
+msgstr "Lagerort auswählen"
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/js/stock_package_render.js:0
+#, python-format
+msgid "Transfer Failed"
+msgstr ""
+
+#. module: axx_barcode_replenishment
+#. odoo-javascript
+#: code:addons/axx_barcode_replenishment/static/src/js/stock_package_render.js:0
+#: code:addons/axx_barcode_replenishment/static/src/js/stock_package_render.js:0
+#, python-format
+msgid "Transfer Validated"
+msgstr ""
+
+#. module: axx_barcode_replenishment
+#. odoo-python
+#: code:addons/axx_barcode_replenishment/models/stock_quant_package.py:0
+#, python-format
+msgid "We can move and unpack only one product!"
+msgstr ""
+
+#. module: axx_barcode_replenishment
+#: model:ir.model,name:axx_barcode_replenishment.model_axx_standard_location_select_wizard
+msgid "Wizard to select standard location"
+msgstr ""

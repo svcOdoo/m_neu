@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_delivery_document_inherit_sale_stock" inherit_id="stock.report_delivery_document">
+        <xpath expr="//div[@name='partner_header']/div" position="after">
+            <div>GLN: <span t-field="o.partner_id.axx_gln"/></div>
+        </xpath>
+
+        <xpath expr="//div/t/p[@t-field='o.date_done']" position="attributes">
+            <attribute name="t-options">{"widget": "date"}</attribute>
+        </xpath>
+
+        <xpath expr="//div/t/p[@t-field='o.scheduled_date']" position="attributes">
+            <attribute name="t-options">{"widget": "date"}</attribute>
+        </xpath>
+
+        <xpath expr="//table[@name='stock_move_table']/thead/tr" position="replace">
+            <tr>
+                <th name="th_sm_new_column0"><strong>Art. Bezeichnung</strong></th>
+                <th name="th_sm_new_column1"><strong>EAN (GTIN Einzelstück)</strong></th>
+                <th name="th_sm_new_column2"><strong>ZAN</strong></th>
+                <th name="th_sm_new_column3"><strong>WWS-Nummer</strong></th>
+                <!--<th name="th_sm_new_column4"><strong>Verpackungs-Menge</strong></th>-->
+                <th name="th_sm_new_column5"><strong>Pein</strong></th>
+                <th name="th_sm_new_column6"><strong>Bestellmenge</strong></th>
+                <th name="th_sm_new_column6"><strong>Liefermenge</strong></th>
+            </tr>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/tbody/tr" position="replace">
+            <tr t-foreach="lines" t-as="move">
+                <td>
+                    <span t-field="move.product_id.name"/>
+                </td>
+                <td>
+                    <span t-field="move.product_id.axx_gtin_single_piece"/>
+                </td>
+                <td>
+                    <span t-field="move.product_id.default_code"/>
+                </td>
+                <td>
+                    <span t-field="move.product_id.axx_trading_partner_article_number"/>
+                </td>
+                <!--<td>
+                    <span t-field="move.product_id.axx_qty_per_vpe"/>
+                </td>-->
+                <td>
+                    <span t-field="move.product_id.axx_qty_per_vpe"/> <span t-field="move.product_id.axx_purchase_unit"/>
+                </td>
+                <td>
+                    <span t-field="move.product_uom_qty"/>
+                    <span t-field="move.product_uom"/>
+                </td>
+                <td>
+                    <span t-field="move.quantity_done"/>
+                    <span t-field="move.product_uom"/>
+                </td>
+            </tr>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_line_table']/thead/tr" position="replace">
+            <tr>
+                <th name="th_sm_new_column0"><strong>Art. Bezeichnung</strong></th>
+                <th name="th_sm_new_column1"><strong>EAN (GTIN Einzelstück)</strong></th>
+                <th name="th_sm_new_column2"><strong>ZAN</strong></th>
+                <th name="th_sm_new_column3"><strong>WWS-Nummer</strong></th>
+                <!--<th name="th_sm_new_column4"><strong>Verpackungs-Menge</strong></th>-->
+                <th name="th_sm_new_column5"><strong>Pein</strong></th>
+                <th name="th_sm_new_column6"><strong>Bestellmenge</strong></th>
+                <th name="th_sm_new_column6"><strong>Liefermenge</strong></th>
+            </tr>
+        </xpath>
+<!--        <xpath expr="//table[@name='stock_move_table']/tbody/tr" position="inside">-->
+<!--            <td>-->
+<!--                <span t-field="move.product_id.axx_gtin_single_piece"/>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <span t-field="move.product_id.default_code"/>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <span t-field="move.product_id.axx_trading_partner_article_number"/>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <span t-field="move.product_id.axx_qty_per_vpe"/>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <span t-field="move.product_id.axx_qty_per_vpe"/> <span t-field="move.product_id.axx_purchase_unit"/>-->
+<!--            </td>-->
+<!--        </xpath>-->
+    </template>
+
+    <template id="stock_report_delivery_has_serial_move_line_inherit" inherit_id="stock.stock_report_delivery_has_serial_move_line">
+        <xpath expr="//td[1]" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </xpath>
+        <xpath expr="//td[2]" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </xpath>
+        <xpath expr="//td[3]" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </xpath>
+        <xpath expr="//td[2]" position="after">
+            <td>
+                <span t-field="move_line.product_id.name"/>
+            </td>
+            <td>
+                <span t-field="move_line.product_id.axx_gtin_single_piece"/>
+            </td>
+            <td>
+                <span t-field="move_line.product_id.default_code"/>
+            </td>
+            <td>
+                <span t-field="move_line.product_id.axx_trading_partner_article_number"/>
+            </td>
+            <!--<td>
+                <span t-field="move_line.product_id.axx_qty_per_vpe"/>
+            </td>-->
+            <td>
+                <span t-field="move_line.product_id.axx_qty_per_vpe"/> <span t-field="move.product_id.axx_purchase_unit"/>
+            </td>
+            <td class="text-center" name="move_line_lot_qty_done">
+                <span t-field="move_line.qty_done"/>
+                <span t-field="move_line.product_uom_id"/>
+            </td>
+        </xpath>
+    </template>
+
+    <template id="stock_report_delivery_aggregated_move_lines_inherit" inherit_id="stock.stock_report_delivery_aggregated_move_lines">
+        <xpath expr="//td[1]" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </xpath>
+        <xpath expr="//td[2]" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </xpath>
+        <xpath expr="//td[3]" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </xpath>
+        <xpath expr="//tr/td[3]" position="after">
+            <td>
+                <span t-esc="aggregated_lines[line]['name']"/>
+                <p t-if="aggregated_lines[line]['description']">
+                    <span t-esc="aggregated_lines[line]['description']"/>
+                </p>
+            </td>
+            <td>
+                <span t-esc="aggregated_lines[line]['product'].axx_gtin_single_piece"/>
+            </td>
+            <td>
+                <span t-esc="aggregated_lines[line]['product'].default_code"/>
+            </td>
+            <td>
+                <span t-esc="aggregated_lines[line]['product'].axx_trading_partner_article_number"/>
+            </td>
+            <!--<td>
+                <span t-esc="aggregated_lines[line]['product'].axx_qty_per_vpe"/>
+            </td>-->
+            <td>
+                <span t-esc="aggregated_lines[line]['product'].axx_qty_per_vpe"/> <span t-esc="aggregated_lines[line]['product'].axx_purchase_unit"/>
+            </td>
+            <td class="text-center" name="move_line_aggregated_qty_ordered">
+                <span t-esc="aggregated_lines[line]['qty_ordered']"
+                      t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
+                <span t-esc="aggregated_lines[line]['product_uom'].name"/>
+            </td>
+            <td class="text-center" name="move_line_aggregated_qty_done">
+                <t t-if="aggregated_lines[line]['qty_done']">
+                    <span t-esc="aggregated_lines[line]['qty_done']"
+                          t-options="{'widget': 'float', 'decimal_precision': 'Product Unit of Measure'}"/>
+                    <span t-esc="aggregated_lines[line]['product_uom'].name"/>
+                </t>
+            </td>
+        </xpath>
+    </template>
+
+    <!-- package related "section lines" -->
+    <template id="stock_report_delivery_package_section_line_inherit" inherit_id="delivery.stock_report_delivery_package_section_line_inherit_delivery">
+        <!--  Add additional Package section line info -->
+        <xpath expr="//td[@name='package_info']/span[1]" position="after">
+            <t t-if="package and package.package_type_id">
+                <span>: </span>
+                <span t-field="package.package_type_id"/>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

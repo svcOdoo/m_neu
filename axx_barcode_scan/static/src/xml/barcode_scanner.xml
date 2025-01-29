@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="axx_barcode_scan.MainMenu" t-inherit="stock_barcode.MainMenu" t-inherit-mode="extension" owl="1">
+            <xpath expr="//div[hasclass('o_stock_barcode_container')]" position="after">
+                <div>
+                    <input type="text" t-on-keypress="onBarcodeKeypress" placeholder="Enter Barcode Manually"
+                           class="form-control manual_text_barcode"></input>
+                    <button class="btn btn-secondary" t-on-click="applyBarcode">Apply</button>
+                </div>
+
+            </xpath>
+    </t>
+
+    <t t-name="axx_barcode_scan.MainComponent" t-inherit="stock_barcode.MainComponent" t-inherit-mode="extension"
+       owl="1">
+        <xpath expr="//button[@t-if='env.model.formViewId']" position="before">
+            <input type="text" t-on-keypress="onBarcodeKeypress" placeholder="Enter Barcode Manually"
+                   class="form-control manual_text_barcode"></input>
+        </xpath>
+    </t>
+
+</templates>

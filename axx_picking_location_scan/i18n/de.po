@@ -1,0 +1,44 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base
+# 	* axx_picking_location_scan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-08 12:13+0000\n"
+"PO-Revision-Date: 2023-02-08 12:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: axx_picking_location_scan
+#: model:ir.model.fields,field_description:axx_picking_location_scan.field_stock_move__axx_barcode
+#: model:ir.model.fields,field_description:axx_picking_location_scan.field_stock_move_line__axx_barcode
+msgid "Barcode / Check Digit"
+msgstr "Barcode/Prüfziffer"
+
+#. module: axx_picking_location_scan
+#: model:ir.model.fields,field_description:axx_picking_location_scan.field_stock_location__axx_check_digit
+#: model:ir.model.fields.selection,name:axx_picking_location_scan.selection__stock_location__axx_picking_location_scan__check_digit
+msgid "Check Digit"
+msgstr "Prüfziffer"
+
+#. module: axx_picking_location_scan
+#. odoo-python
+#: code:addons/axx_picking_location_scan/models/stock/stock_move.py:0
+#: code:addons/axx_picking_location_scan/models/stock/stock_move.py:0
+#, python-format
+msgid ""
+"Incorrect Barcode/Check Digit for product %s! Scanned barcode: %s. Expected "
+"barcode: %s!"
+msgstr "Falscher Barcode/Prüfziffer für Produkt %s! Gescannt: %s. Erwartet: %s!"
+
+#. module: axx_picking_location_scan
+#: model:ir.model.fields,field_description:axx_picking_location_scan.field_stock_location__axx_picking_location_scan
+msgid "Picking Location Scan?"
+msgstr "Picking Lagerort Scan?"

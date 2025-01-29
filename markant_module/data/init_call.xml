@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <function model="post.object.run.one.time" name="func_run_one_time"
+                  eval="('markant.post.object', [
+                    'set_signup_stock_parameters',
+                    'set_signup_sale_parameters',
+                    'recompute_location_full_seq',
+                    'set_default_barcode',
+                    'setup_stock_operation_types_new',
+                    'setup_stock_operation_types_new2',
+                    'setup_stock_operation_types_new3',
+                    'setup_stock_scheduler',
+                    'setup_stock_operation_types_new4',
+                    'recompute_location_full_seq2',
+                    'setup_barcode_nomenclatures2',
+                    'set_signup_stock_parameters2',
+                    'setup_stock_operation_types_int_1',
+                    'setup_stock_operation_types_new5',
+                    'update_paper_format',
+                    'setup_stock_operation_types_new6',
+                    'setup_stock_operation_types_new7',
+                    'setup_stock_operation_types_new8',
+                  ])"/>
+
+    </data>
+</odoo>

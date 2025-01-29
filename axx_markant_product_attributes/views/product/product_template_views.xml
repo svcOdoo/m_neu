@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_form_view_inherit_axx_markant_product_attributes" model="ir.ui.view">
+        <field name="name">product.template.common.form.inherit.axx.markant.product.attributes</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Additional Attributes">
+                    <group>
+                        <group>
+                            <field name="axx_abc_classification_article" />
+                            <field name="axx_hull_range_classification" />
+                            <label for="axx_supplier_article_number" class="axx_w_120"/>
+                            <div>
+                                <field name="axx_supplier_article_number"/>
+                            </div>
+                            <field name="axx_trading_partner_supplier_number" />
+                            <field name="axx_trading_partner_article_number" />
+                            <field name="axx_gtin_single_piece" />
+                            <field name="axx_gtin_vpe" />
+                            <field name="axx_qty_per_vpe" />
+                            <field name="axx_purchase_unit" />
+                        </group>
+                        <group>
+                            <field name="axx_sales_unit" />
+                            <field name="axx_layer_factor_vpe" />
+                            <field name="axx_pallet_factor_vpe" />
+                            <field name="axx_min_purchase_qty_vpe" />
+                            <field name="axx_order_quantity" />
+                            <field name="axx_qty_sold_per_week" />
+                            <field name="axx_delivery_type" />
+                            <field name="axx_material_group" />
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

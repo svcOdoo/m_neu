@@ -1,0 +1,8 @@
+<odoo>
+    <data noupdate="1">
+        <record id="axx_split_limit" model="ir.config_parameter">
+            <field name="key">split.limit</field>
+            <field name="value">10</field>
+        </record>
+    </data>
+</odoo>

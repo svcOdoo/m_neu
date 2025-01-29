@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit the stock.location search view -->
+        <record id="view_location_search" model="ir.ui.view">
+            <field name="name">view_location_search</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="stock.view_location_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='complete_name']" position="before">
+                    <!-- Add barcode as the first search option -->
+                    <field name="barcode" string="Barcode"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
