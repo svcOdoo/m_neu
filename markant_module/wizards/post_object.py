@@ -46,6 +46,7 @@ class MarkanPostObject(models.TransientModel):
             'group_stock_production_lot': True,
             'group_lot_on_delivery_slip': False,
             'group_product_pricelist': True,
+            'default_invoice_policy': 'delivery',
             'group_stock_adv_location': True,
         })
         settings.execute()
