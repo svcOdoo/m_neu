@@ -11,6 +11,10 @@ class AxxPutDownWizard(models.TransientModel):
         string="WA-Bahn",
     )
 
+    axx_partner_dest_name = fields.Char(
+        string="Kunde"
+    )
+
     @api.model
     def default_get(self, fields):
         res = super(AxxPutDownWizard, self).default_get(fields)
@@ -18,4 +22,5 @@ class AxxPutDownWizard(models.TransientModel):
             picking_id = self.env['stock.picking'].browse(self.env.context.get('active_id'))
             if picking_id.id:
                 res['axx_location_dest_name'] = picking_id.location_dest_id.name
+                res['axx_partner_dest_name'] = picking_id.partner_id.name
         return res

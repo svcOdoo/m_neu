@@ -7,9 +7,9 @@
             <field name="model">axx.put.down.wizard</field>
             <field name="arch" type="xml">
                 <form>
-                    <div name="destination_location" title="Destination Location" style="font-size: 3em;text-align: center; overflow: auto;">
+                    <div name="destination_location" title="Destination Location" style="font-size: 2em;text-align: center; overflow: auto;">
                             <i class="fa fa-fw fa-sign-in"></i><span class="o_line_destination_location fst-italic text-muted">
-                        <span class="text-black"><field name="axx_location_dest_name" readonly="1" nolabel="1"/></span></span>
+                        <span class="text-black"><field name="axx_location_dest_name" readonly="1" nolabel="1"/> <field name="axx_partner_dest_name" readonly="1" nolabel="1"/></span></span>
                     </div>
                 </form>
             </field>
