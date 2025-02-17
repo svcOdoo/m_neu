@@ -9,7 +9,19 @@
                 <form>
                     <div name="destination_location" title="Destination Location" style="font-size: 2em;text-align: center; overflow: auto;">
                             <i class="fa fa-fw fa-sign-in"></i><span class="o_line_destination_location fst-italic text-muted">
-                        <span class="text-black"><field name="axx_location_dest_name" readonly="1" nolabel="1"/> <field name="axx_partner_dest_name" readonly="1" nolabel="1"/></span></span>
+                        <span class="text-black"><field name="axx_location_dest_name" readonly="1" nolabel="1"/></span></span>
+                    </div>
+                    <div name="destination_name" title="Destination Name" style="font-size: 1.5em;text-align: center; overflow: auto;">
+                       <span class="o_line_destination_location fst-italic text-muted">
+                        <span class="text-black"><field name="axx_partner_dest_name" readonly="1" nolabel="1"/></span></span>
+                    </div>
+                    <div name="destination_street" title="Destination Street" style="font-size: 1.5em;text-align: center; overflow: auto;">
+                        <span class="o_line_destination_location fst-italic text-muted">
+                            <span class="text-black"><field name="axx_partner_dest_street" readonly="1" nolabel="1"/></span></span>
+                    </div>
+                    <div name="destination_city" title="Destination City" style="font-size: 1.5em;text-align: center; overflow: auto;">
+                        <span class="o_line_destination_location fst-italic text-muted">
+                            <span class="text-black"><field name="axx_partner_dest_zip" readonly="1" nolabel="1"/><t t-esc="' '"/><field name="axx_partner_dest_city" readonly="1" nolabel="1"/></span></span>
                     </div>
                 </form>
             </field>
